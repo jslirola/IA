@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	SENTENCIAS GENERALES SOBRE EL JUEGO
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+-->
+
+<category>
+<pattern>QUIERO JUGAR</pattern>
+<template>
+	Vale, cuando estés listo avisa cuando quieras empezar.
+	<think><set name="topic">nivel1</set></think>
+</template>
+</category>
+
+<topic name="nivel1"> <!-- Nivel1 - Bot selecciona aleatoriamente y adivinamos -->
+
+	<category>
+	<pattern>^ EMPEZAR</pattern>
+	<template>
+		<think>
+			<set name="list_players">alejandro alfonso antonio cristina gabriela ivan javier juan laura luis marco maria paco pepe sofia sonia</set>
+			<set var="lista"> <get name="list_players"/> </set>
+			<set var="cantidad"><srai>COUNT <get var="lista"/></srai></set>
+			<set var="pos"><srai>RANDOM <get var="cantidad"/></srai></set>
+			<set name="elegido">
+				<srai>
+					SELECTITEM <get var="pos"/> IN <get var="lista"/>
+				</srai>
+			</set>
+			<set name="hair_player"> <map name="pelo"><get name="elegido"/></map> </set>
+			<set name="eyes_player"> <map name="ojos"><get name="elegido"/></map> </set>
+			<set name="skin_player"> <map name="piel"><get name="elegido"/></map> </set>
+			<set name="glasses_player"> <map name="gafas"><get name="elegido"/></map> </set>
+			<set name="moustache_player"> <map name="bigote"><get name="elegido"/></map> </set>
+			<set name="beard_player"> <map name="barba"><get name="elegido"/></map> </set>
+			<set name="genre_player"> <map name="genero"><get name="elegido"/></map> </set>						
+		</think>
+		Que empiece el juego... MUAJAJAJAJA
+	</template>
+	</category>
+
+	<category>
+	<pattern>ES *</pattern>
+	<template>
+		<condition name="elegido">
+			<li><value><star/></value> CORRECTO!! </li>
+			<li> Has fallado, el personaje era <get name="elegido"/>.</li>
+		</condition>
+	</template>		
+	</category>	
+	
+	<category>
+	<pattern>EL PERSONAJE EN EL QUE ESTABAS PENSANDO ES *</pattern>
+	<template>
+		<srai>ES <star/></srai>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>EL PERSONAJE EN EL QUE PENSABAS ES *</pattern>
+	<template>
+		<srai>ES <star/></srai>
+	</template>		
+	</category>				
+
+	<!-- 
+	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		PREGUNTAS RELACIONADAS CON EL PELO
+	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	-->
+
+	<category>
+	<pattern>TIENE EL PELO *</pattern>
+	<template>
+		<condition name="hair_player">
+			<li><value><star/></value> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>ES MORENO</pattern>
+	<template>
+		<condition name="hair_player">
+			<li value="moreno"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>ES RUBIO</pattern>
+	<template>
+		<condition name="hair_player">
+			<li value="rubio"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>ES PELIRROJO</pattern>
+	<template>
+		<condition name="hair_player">
+			<li value="pelirrojo"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>	
+	
+	<category>
+	<pattern>ES CALVO</pattern>
+	<template>
+		<condition name="hair_player">
+			<li value="calvo"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category> 
+
+	<category>
+	<pattern>* ES MORENO</pattern>
+	<template>
+		<think><set var="hair"><map name="pelo"><star/></map></set></think>
+		<condition var="hair">
+			<li value="moreno"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>ES * MORENO</pattern>
+	<template>
+		<srai><star/> ES MORENO</srai>
+	</template>		
+	</category>	
+
+	<category>
+	<pattern>* ES RUBIO</pattern>
+	<template>
+		<think><set var="hair"><map name="pelo"><star/></map></set></think>
+		<condition var="hair">
+			<li value="rubio"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>ES * RUBIO</pattern>
+	<template>
+		<srai><star/> ES RUBIO</srai>
+	</template>		
+	</category>	
+
+	<category>
+	<pattern>* ES PELIRROJO</pattern>
+	<template>
+		<think><set var="hair"><map name="pelo"><star/></map></set></think>
+		<condition var="hair">
+			<li value="pelirrojo"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>ES * PELIRROJO</pattern>
+	<template>
+		<srai><star/> ES PELIRROJO</srai>
+	</template>		
+	</category>	
+
+	<category>
+	<pattern>* ES CALVO</pattern>
+	<template>
+		<think><set var="hair"><map name="pelo"><star/></map></set></think>
+		<condition var="hair">
+			<li value="calvo"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>ES * CALVO</pattern>
+	<template>
+		<srai><star/> ES CALVO</srai>
+	</template>		
+	</category>	
+
+	<!-- 
+	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		PREGUNTAS RELACIONADAS CON LOS OJOS
+	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	-->
+
+	<category>
+	<pattern>TIENE LOS OJOS *</pattern>
+	<template>
+		<condition name="eyes_player">
+			<li><value><star/></value> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<!-- 
+	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		PREGUNTAS RELACIONADAS CON LA PIEL
+	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	-->
+
+	<category>
+	<pattern>TIENE LA PIEL *</pattern>
+	<template>
+		<condition name="skin_player">
+			<li><value><star/></value> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>$TIENE * LA PIEL *</pattern>
+	<template>
+		<think><set var="skin"><map name="piel"><star index="1"/></map></set></think>
+		<condition var="skin">
+			<li><value><star index="2"/></value> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>	
+
+	<category>
+	<pattern>* TIENE LA PIEL *</pattern>
+	<template>
+		<srai>$TIENE <star index="1"/> LA PIEL <star index="2"/></srai>
+	</template>		
+	</category>	
+
+	<!-- 
+	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		PREGUNTAS RELACIONADAS CON LAS GAFAS
+	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	-->
+
+	<category>
+	<pattern>* GAFAS</pattern>
+	<template>
+		<condition name="glasses_player">
+			<li value="Si"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>$TIENE * GAFAS</pattern>
+	<template>
+		<think><set var="glasses"><map name="gafas"><star/></map></set></think>
+		<condition var="glasses">
+			<li value="si"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>	
+
+	<category>
+	<pattern>* TIENE GAFAS</pattern>
+	<template>
+		<srai>$TIENE <star/> GAFAS</srai>
+	</template>		
+	</category>	
+
+	<category>
+	<pattern>TIENE GAFAS *</pattern>
+	<template>
+		<srai>$TIENE <star/> GAFAS</srai>
+	</template>		
+	</category>		
+
+	<!-- 
+	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		PREGUNTAS RELACIONADAS CON EL BIGOTE
+	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	-->
+
+	<category>
+	<pattern>* BIGOTE</pattern>
+	<template>
+		<condition name="moustache_player">
+			<li value="Si"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>$TIENE * BIGOTE</pattern>
+	<template>
+		<think><set var="moustache"><map name="bigote"><star/></map></set></think>
+		<condition var="moustache">
+			<li value="si"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>	
+
+	<category>
+	<pattern>* TIENE BIGOTE</pattern>
+	<template>
+		<srai><star/> $TIENE BIGOTE</srai>
+	</template>			
+	</category>	
+
+	<category>
+	<pattern>TIENE BIGOTE *</pattern>
+	<template>
+		<srai><star/> $TIENE BIGOTE</srai>
+	</template>			
+	</category>	
+
+	<!-- 
+	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		PREGUNTAS RELACIONADAS CON LA BARBA
+	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	-->
+
+	<category>
+	<pattern>* BARBA</pattern>
+	<template>
+		<condition name="beard_player">
+			<li value="Si"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>$TIENE * BARBA</pattern>
+	<template>
+		<think><set var="beard"><map name="barba"><star/></map></set></think>
+		<condition var="beard">
+			<li value="si"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>	
+
+	<category>
+	<pattern>* TIENE BARBA</pattern>
+	<template>
+		<srai>$TIENE <star/> BARBA</srai>
+	</template>		
+	</category>	
+
+	<category>
+	<pattern>TIENE BARBA *</pattern>
+	<template>
+		<srai>$TIENE <star/> BARBA</srai>
+	</template>		
+	</category>		
+
+	<!-- 
+	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		PREGUNTAS RELACIONADAS CON EL GENERO
+	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	-->
+
+	<category>
+	<pattern>ES MUJER</pattern>
+	<template>
+		<condition name="genre_player">
+			<li value="Mujer"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>ES HOMBRE</pattern>
+	<template>
+		<condition name="genre_player">
+			<li value="Hombre"> Si. </li>
+			<li> No. </li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>* ES MUJER</pattern>
+	<template>
+		<think><set var="genre"><map name="genre_player"><star/></map></set></think>
+		<condition var="genre">
+			<li value="mujer"> Si. </li>
+			<li><get var="genre"/></li>
+		</condition>
+	</template>		
+	</category>	
+
+	<category>
+	<pattern>ES * MUJER</pattern>
+	<template>
+		<srai><star/> ES MUJER</srai>
+	</template>			
+	</category>		
+
+	<category>
+	<pattern>* ES HOMBRE</pattern>
+	<template>
+		<think><set var="genre"><map name="genre_player"><star/></map></set></think>
+		<condition var="genre">
+			<li value="hombre"> Si. </li>
+			<li><get var="genre"/></li>
+		</condition>
+	</template>		
+	</category>
+
+	<category>
+	<pattern>ES * HOMBRE</pattern>
+	<template>
+		<srai><star/> ES HOMBRE</srai>
+	</template>			
+	</category>			
+
+</topic>
+
+</aiml>

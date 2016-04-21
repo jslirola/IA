@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+	<category>
+	<pattern>^ APRUEBO IA</pattern>
+	<template>Para aprobar la asignatura es necesario tener una calificación numérica superior o igual a 5 (sobre 10).</template>
+	</category> <!-- Pregunta #1 -->
+
+	<category>
+	<pattern>^ APROBAR LA TEORIA</pattern>
+	<template>Para la parte de teoría se realizará un examen final que se valorará sobre 10. Durante el curso se realizarán tres pruebas que conjuntamente podrían dar un máximo de 2 puntos sobre el examen final. La nota final de teoría sería el mínimo entre 10 y la suma de la nota del examen con la nota obtenida en las pruebas parciales.</template>
+	</category> <!-- Pregunta #2 -->
+
+	<category>
+	<pattern>COMO ^ SUPERAR LA PARTE PRACTICA</pattern>
+	<template>Para la parte de prácticas se tendrá en cuenta la asistencia y participación a las clases (esta parte constituye el 10% de la nota de prácticas), y adicionalmente se realizarán tres prácticas y un examen de problemas, la nota será la media de estas cuatro pruebas (esta parte constituye el 90% de la nota de prácticas). La parte de prácticas se realiza por evaluación continua y no se realizará un examen final.</template>
+	</category> <!-- Pregunta #3 -->
+
+	<category>
+	<pattern>^ CONVOCATORIA DE JUNIO</pattern>
+	<template>La parte teórica valdrá el 50% y la parte práctica 50%.</template>
+	</category> <!-- Pregunta #4 -->
+
+	<category>
+	<pattern>QUE PASA SI TENGO QUE PRESENTARME EN LA CONVOCATORIA DE SEPTIEMBRE</pattern>
+	<template>En la convocatoria de septiembre habrá un examen escrito único (evaluado de 0 a 10) que incluirá preguntas tanto de tipo teórico como práctico que garanticen que el alumno ha adquirido la totalidad de las competencias descritas en esta misma guía docente. No habrá entrega de prácticas en esta convocatoria.</template>
+	</category> <!-- Pregunta #5 -->
+
+	<category>
+	<pattern>HAY EXAMEN DE PRACTICAS EN LA CONVOCATORIA DE SEPTIEMBRE</pattern>
+	<template>No.</template>
+	</category> <!-- Pregunta #6 -->
+
+	<category>
+	<pattern>^ NO PUEDO ASISTIR A CLASE REGULARMENTE</pattern>
+	<template>Podrá acogerse a la evaluación única final. Para ello deberá solicitarlo al Director del Departamento o al Coordinador del Máster en las dos primeras semanas de impartición de la asignatura o, excepcionalmente, en las dos primeras semanas tras la matriculación en la asignatura.</template>
+	</category> <!-- Pregunta #7 -->
+
+	<category>
+	<pattern>^ NOTA MINIMA ^ APROBAR</pattern>
+	<template>La calificación correspondiente a la parte teórica como la correspondiente a la parte práctica deben ser mayores o iguales a 3 (sobre 10)</template>
+	</category> <!-- Pregunta #8 -->
+
+	<category>
+	<pattern>LAS PRACTICAS SON OBLIGATORIAS</pattern>
+	<template>Si se quiere aprobar, si.</template>
+	</category> <!-- Pregunta #9 -->
+
+	<category>
+	<pattern>CUANTO VALE CADA PRACTICA CON RESPECTO A LA NOTA FINAL</pattern>
+	<template>Valen el 90% de la parte práctica, y sobre ello, 25% cada práctica y el examen de problemas.</template>
+	</category> <!-- Pregunta #10 -->
+
+	<category>
+	<pattern>^ PARTICIPACION CON RESPECTO A LA NOTA FINAL</pattern>
+	<template>10%.</template>
+	</category> <!-- Pregunta #11 -->
+
+	<category>
+	<pattern>CUANTO ^ GUION DE PRACTICAS CON RESPECTO A LA NOTA FINAL</pattern>
+	<template><srai>CUANTO VALE CADA PRACTICA CON RESPECTO A LA NOTA FINAL</srai></template>
+	</category> <!-- Pregunta #12 igual a #10 -->
+
+	<category>
+	<pattern>COMO ^ PUNTOS POR PARTICIPACION</pattern>
+	<template>Realizando ejercicios en clase.</template>
+	</category> <!-- Pregunta #13 -->
+
+	<category>
+	<pattern>^ MINIMO ^ APROBAR LA ASIGNATURA</pattern>
+	<template>Un cinco.</template>
+	</category> <!-- Pregunta #14 -->
+
+	<category>
+	<pattern>LOS TRABAJOS SON INDIVIDUALES</pattern>
+	<template>Si.</template>
+	</category> <!-- Pregunta #15 -->
+
+	<category>
+	<pattern>SE PUEDEN HACER LOS TRABAJOS EN GRUPO</pattern>
+	<template>No.</template>
+	</category> <!-- Pregunta #16 -->
+
+	<category>
+	<pattern>^ ENTREGAR LOS EJERCICIOS ^ PROBLEMAS</pattern>
+	<template>No es obligatorio pero se recomienda realizarlos para llevar al día la asignatura.</template>
+	</category> <!-- Pregunta #17 -->
+
+	<category>
+	<pattern>POR QUE TENGO QUE ESTUDIAR</pattern>
+	<template>Por qué tengo que responder?</template>
+	</category> <!-- Pregunta #18 -->
+
+	<category>
+	<pattern>CUANTO ^ PRIMER EXAMEN DE TEORIA</pattern>
+	<template>Vale 0,5 puntos.</template>
+	</category> <!-- Pregunta #19 -->
+
+	<category>
+	<pattern>^ UNA NOTA MAYOR A 10</pattern>
+	<template>Creo que no...</template>
+	</category> <!-- Pregunta #20 -->
+
+	<category>
+	<pattern>^ RECUPERAR UNA PRACTICA O EXAMEN</pattern>
+	<template>No puedes.</template>
+	</category> <!-- Pregunta #21 -->
+
+	<category>
+	<pattern>QUE PASA SI ME COPIO DE OTRO ESTUDIANTE</pattern>
+	<template>Tendrás automáticamente suspensa la asignatura y deberás presentarse a la convocatoria de septiembre.</template>
+	</category> <!-- Pregunta #22 -->
+
+	<category>
+	<pattern>QUE PASA SI ME DEJO COPIAR DE OTRO ESTUDIANTE</pattern>
+	<template><srai>QUE PASA SI ME COPIO DE OTRO ESTUDIANTE</srai></template>
+	</category> <!-- Pregunta #23 igual que #22 -->
+
+	<category>
+	<pattern>Y SI SUSPENDO EN LA CONVOCATORIA DE JUNIO</pattern>
+	<template>Vas a septiembre.</template>
+	</category> <!-- Pregunta #24 -->
+
+	<category>
+	<pattern>CUANTO VALE LA PRACTICA Y LA TEORIA</pattern>
+	<template>50% cada una de las partes.</template>
+	</category> <!-- Pregunta #25 -->
+
+	<category>
+	<pattern>^ HORARIO DE TUTORIAS ^ PRACTICAS</pattern>
+	<template>Lunes de 11:30 a 13:30 en ND (ETSIIT), Miércoles de 15:30 a 18:30 en M2 (FCiencia), Viernes de 17:30 a 18:30 en ND (ETSIIT).</template>
+	</category> <!-- Pregunta #26 -->
+
+	<category>
+	<pattern>^ CORREO ELECTRONICO ^ DE TEORIA</pattern>
+	<template>faro@decsai.ugr.es</template>
+	</category> <!-- Pregunta #27 -->
+
+	<category>
+	<pattern>SE PUEDE APROBAR LA PARTE PRACTICA DE LA ASIGNATURA SI NO PRESENTO UNA PRACTICA</pattern>
+	<template>Si se llega a la nota mínimo con el resto de prácticas si (creo).</template>
+	</category> <!-- Pregunta #28 -->
+
+	<category>
+	<pattern>^ NOTA MINIMA ^ MEDIA</pattern>
+	<template>Un tres.</template>
+	</category> <!-- Pregunta #29 -->
+
+	<category>
+	<pattern>QUE PUNTUACION OBTENGO EN LA PRACTICA 1 SI OPTO POR DEFENDER EL NIVEL 3 Y NO LO SUPERO</pattern>
+	<template>6 puntos.</template>
+	</category> <!-- Pregunta #30 -->
+
+	<category>
+	<pattern>PUEDO ENTREGAR LA PRACTICA 1 SIN HACER LA TAREA RELATIVA AL NIVEL 0</pattern>
+	<template>No.</template>
+	</category> <!-- Pregunta #31 -->
+
+	<category>
+	<pattern>QUE ^ HACER SI NO PUEDO ASISTIR ^ PRACTICAS ^ DEFENSA ^</pattern>
+	<template>No obtienes puntuación en la práctica.</template>
+	</category> <!-- Pregunta #32 -->
+
+	<category>
+	<pattern>CUANTAS PRUEBAS TEORICAS TENDRE A LO LARGO DEL CURSO</pattern>
+	<template>Tres.</template>
+	</category> <!-- Pregunta #33 -->
+
+	<category>
+	<pattern>QUE VALE LA PRIMERA PRUEBA TEORICA</pattern>
+	<template><srai>CUANTO ^ PRIMER EXAMEN DE TEORIA</srai></template>
+	</category> <!-- Pregunta #34 igual que #19 -->
+
+	<category>
+	<pattern>EN LA PARTE TEORICA SE TIENE EN CUENTA LA ASISTENCIA</pattern>
+	<template>No.</template>
+	</category> <!-- Pregunta #35 -->
+
+	<category>
+	<pattern>EN QUE CONSISTE EL EXAMEN DE EJERCICIOS</pattern>
+	<template>Un examen al final de las prácticas con problemas similares a los realizados en clase.</template>
+	</category> <!-- Pregunta #36 -->
+
+	<category>
+	<pattern>^ SI NO QUIERO DEFENDER UNA PRACTICA</pattern>
+	<template><srai>QUE ^ HACER SI NO PUEDO ASISTIR ^ PRACTICAS ^ DEFENSA ^</srai></template>
+	</category> <!-- Pregunta #37 igual que #32 -->
+
+	<category>
+	<pattern>^ SI NO ESTOY SEGURO DE PODER SUPERAR EL NIVEL 3 DE LA PRÁCTICA 1</pattern>
+	<template>Intentar el nivel 2 o, en el peor de los casos quedarse en el nivel 1.</template>
+	</category> <!-- Pregunta #38 -->
+
+	<category>
+	<pattern>^ PRACTICAS ENTREGABLES TIENE LA ASIGNATURA</pattern>
+	<template>Tres.</template>
+	</category> <!-- Pregunta #39 -->
+
+	<category>
+	<pattern>^ PROGRAMO MUY BIEN EN ^ HACER LAS PRACTICAS EN ^</pattern>
+	<template>No.</template>
+	</category> <!-- Pregunta #40 -->
+
+	<category>
+	<pattern>ODIO AIML, PODRIA HACER LAS PRACTICAS CON OTRO LENGUAJE</pattern>
+	<template>No.</template>
+	</category> <!-- Pregunta #41 -->
+
+	<category>
+	<pattern>DONDE ^ OFICINA DEL PROFESOR DE PRACTICAS</pattern>
+	<template>En la ETSIIT (ND) y en la Facultad de Ciencias (M2).</template>
+	</category> <!-- Pregunta #42 -->
+
+	<category>
+	<pattern>DONDE ^ DESPACHO DEL PROFESOR DE TEORIA</pattern>
+	<template>En la ETSIIT (D24).</template>
+	</category> <!-- Pregunta #43 -->
+
+	<category>
+	<pattern>^ 15 PUNTOS ^ PRACTICAS ^ ASEGURA APROBAR LAS PRACTICAS</pattern>
+	<template>No, hay que realizar el examen de problemas.</template>
+	</category> <!-- Pregunta #44 -->
+
+	<category>
+	<pattern>^ 20 PUNTOS ^ PRACTICAS ^ ASEGURA APROBAR LA ASIGNATURA</pattern>
+	<template><srai>^ 15 PUNTOS ^ PRACTICAS ^ ASEGURA APROBAR LAS PRACTICAS</srai></template>
+	</category> <!-- Pregunta #45 -->
+
+	<category>
+	<pattern>^ NO PUDE HACER LA PRACTICA ^ PUEDO RECUPERAR ESA PRACTICA</pattern>
+	<template>No.</template>
+	</category> <!-- Pregunta #46 -->
+
+	<category>
+	<pattern>^ NO PUDE HACER LA PRACTICA ^ POSIBILIDADES DE APROBAR LA PARTE PRACTICA</pattern>
+	<template>Si.</template>
+	</category> <!-- Pregunta #47 -->
+
+	<category>
+	<pattern>^ AGENTES CONVERSACIONALES ^ PODRIA USAR AGENTES CONVERSACIONALES PARA ^</pattern>
+	<template>No lo creo.</template>
+	</category> <!-- Pregunta #48 -->
+
+	<category>
+	<pattern>EN LAS SIGUIENTES PRACTICAS HAY TAMBIEN QUE PROGRAMAR</pattern>
+	<template>Probablemente, si no te gusta programar prueba a cambiar de grado universitario...</template>
+	</category> <!-- Pregunta #49 -->
+
+	<category> 
+	<pattern>EL NIVEL 0 ES MUY FACIL, EL RESTO DE LA PRACTICA SE COMPLICA MUCHO</pattern>
+	<template>Define "mucho".</template>
+	</category> <!-- Pregunta #50 -->
+
+</aiml>

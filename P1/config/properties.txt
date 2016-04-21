@@ -1,0 +1,9 @@
+url:http://www.alicebot.org
+name:jslirola
+email:jslirola@andalucia-devs.com
+gender:male
+botmaster:Javier	
+organization:ugr
+version:0.0.1
+
+
